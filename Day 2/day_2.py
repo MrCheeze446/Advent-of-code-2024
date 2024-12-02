@@ -8,14 +8,14 @@ def check_difference(nums):
 
 def all_dcreasing(nums):
     for previous, current in zip(nums, nums[1:]):
-        if int(previous) > int(current):
+        if not (int(previous) > int(current)):
             return False
     return True
 
 
 def all_increasing(nums):
     for previous, current in zip(nums, nums[1:]):
-        if int(previous) < int(current):
+        if not (int(previous) < int(current)):
             return False
     return True
 
