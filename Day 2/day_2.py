@@ -26,9 +26,16 @@ def parse_input(file):
     with open(file) as f:
         for line in f:
             nums = line.split()
-            if all_increasing(nums) or all_dcreasing(nums):
-                if check_difference(nums):
-                    safe_vals += 1
+            if (all_increasing(nums) or all_dcreasing(nums)) and check_difference(nums):
+                safe_vals += 1
+            else:  # let's be stupid for part 2 lol
+                num_perms = [nums[:i] + nums[i + 1 :] for i in range(len(nums))]
+                for perm in num_perms:
+                    if (
+                        all_increasing(perm) or all_dcreasing(perm)
+                    ) and check_difference(perm):
+                        safe_vals += 1
+                        break
 
     return safe_vals
 
