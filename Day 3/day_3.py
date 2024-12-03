@@ -23,7 +23,7 @@ def add_muls(groups):
 
 def parse_input(file):
 
-    find_groups = r"(mul\(\d{0,3},\d{0,3}\)|do\(\)|don't\(\))"
+    find_groups = r"(mul\(\d{1,3},\d{1,3}\)|do\(\)|don't\(\))"
 
     with open(file) as f:
         content = f.read()
