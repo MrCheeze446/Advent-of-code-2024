@@ -4,6 +4,7 @@ import re
 def add_muls(groups):
     total = 0
     do_state = True
+
     for group in groups:
         if group == "do()":
             do_state = True
